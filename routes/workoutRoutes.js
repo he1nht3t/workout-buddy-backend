@@ -1,5 +1,8 @@
 const express = require("express");
 
+//IMPORT AUTH
+const requireAuth = require("../middleware/requireAuth");
+
 //IMPORT WORKOUT CONTROLLERS
 const {
   createWorkout,
@@ -11,6 +14,9 @@ const {
 
 //Express router
 const router = express.Router();
+
+//auth user for workout routes
+router.use(requireAuth);
 
 //get all workouts
 router.get("/", getWorkouts);

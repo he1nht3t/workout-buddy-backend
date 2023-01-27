@@ -7,6 +7,9 @@ const cors = require("cors");
 //workout routes
 const workoutRoutes = require("./routes/workoutRoutes");
 
+//USER ROUTES
+const userRoutes = require("./routes/userRoutes");
+
 //Express APP
 const app = express();
 
@@ -23,6 +26,7 @@ app.use((req, res, next) => {
 
 //ROUTES
 app.use("/api/workouts", workoutRoutes);
+app.use("/api/user", userRoutes);
 
 //CONNECT TO DB
 mongoose.set("strictQuery", false);
